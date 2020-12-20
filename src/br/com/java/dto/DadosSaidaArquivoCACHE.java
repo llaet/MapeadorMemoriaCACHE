@@ -22,7 +22,7 @@ public class DadosSaidaArquivoCACHE {
 	private List<String> infoEnderecos;
 	
 	public DadosSaidaArquivoCACHE() {
-		this.tamanhoCACHE = "";
+		this.tamanhoCACHE = "Tamanho da cache: ";
 		this.qtdBitsEndereco = "Número de bits do endereço: ";
 		this.qtdBitsBloco = "Número de bits para a posição no bloco: ";
 		this.qtdBitsConjunto = "Número de bits para o número do conjunto: ";
@@ -35,7 +35,7 @@ public class DadosSaidaArquivoCACHE {
 	}
 
 	public void setTamanhoCACHE(String tamanhoCACHE) {
-		this.tamanhoCACHE = tamanhoCACHE;
+		this.tamanhoCACHE = this.tamanhoCACHE + tamanhoCACHE;
 	}
 
 	public String getQtdBitsEndereco() {

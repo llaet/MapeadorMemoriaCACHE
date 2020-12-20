@@ -5,6 +5,8 @@ import java.util.List;
 
 import br.com.java.dto.DadosEntradaArquivoRAM;
 import br.com.java.dto.DadosSaidaArquivoCACHE;
+import br.com.java.enumeration.MedidaByte;
+import br.com.java.mat.CalculoUtil;
 
 /**
  * Classe que escreve em um arquivo.
@@ -31,6 +33,10 @@ public class EscritorArquivo {
 		//cria lista com apenas as informações de acessos a memória.
 		List<String> novoDocumento = documento.subList(3, documento.size());
 		this.preencheEnderecosAcesso(novoDocumento);
+		
+		this.preencheTamanhoCACHE(this.entrada.getBytesPalavra(), 
+				this.entrada.getQtdPalavrasBloco(), this.entrada.getQtdBlocos(), 
+				this.entrada.getQtdConjuntos());
 	}
 	
 	/**
@@ -97,6 +103,18 @@ public class EscritorArquivo {
 	 */
 	private void preencheEnderecosAcesso(List<String> dadosRAM) {		
 		this.entrada.setEnderecosAcesso(dadosRAM);
+	}
+	
+	private void preencheTamanhoCACHE(String bytesPalavra, 
+			String qtdPalavrasBloco, String qtdBlocos, String qtdConjuntos) {
+		
+		Integer totalBytes = Integer.parseInt(bytesPalavra) * Integer.parseInt(qtdPalavrasBloco) *
+				Integer.parseInt(qtdBlocos) * Integer.parseInt(qtdConjuntos);
+		
+		this.saida.setTamanhoCACHE(CalculoUtil.formataValorByte(totalBytes, 1024) + " " 
+				+ MedidaByte.getNomeUnidade(totalBytes));
+		
+		System.out.println(saida.getTamanhoCACHE());
 	}
 	
 }

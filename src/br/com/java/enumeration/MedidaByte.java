@@ -35,7 +35,7 @@ public enum MedidaByte {
 	 * @param bytes
 	 * @return o nome da unidade de medida.
 	 */
-	static String getNomeUnidade(Integer bytes) {
+	public static String getNomeUnidade(Integer bytes) {
 				
 		for(MedidaByte medida : MedidaByte.values()) {
 			
