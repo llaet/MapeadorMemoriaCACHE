@@ -131,11 +131,12 @@ public class LeitorArquivo extends javax.swing.JFrame {
 				// insert the document lines to list
 				while (qv.hasNextLine()) {
 					documentoTXT.add(qv.nextLine().toUpperCase());
-				}
-				
+				}			
 				// close Scanner object
 				qv.close();
 				setProgressBarPercentage(15);
+				EscritorArquivo escritor = new EscritorArquivo();
+				escritor.escreveNovoDocumento(documentoTXT);
 				/** instance TextWriter class to write a new document
 				EscritorTexto escritor = new EscritorTexto();
 				escritor.separaInstrucao(documentoTXT);
