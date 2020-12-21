@@ -23,10 +23,10 @@ public class DadosSaidaArquivoCACHE {
 	
 	public DadosSaidaArquivoCACHE() {
 		this.tamanhoCACHE = "Tamanho da cache: ";
-		this.qtdBitsEndereco = "Número de bits do endereço: ";
-		this.qtdBitsBloco = "Número de bits para a posição no bloco: ";
-		this.qtdBitsConjunto = "Número de bits para o número do conjunto: ";
-		this.qtdBitsTAG = "Número de bits para a TAG: ";
+		this.qtdBitsEndereco = "";
+		this.qtdBitsBloco = "";
+		this.qtdBitsConjunto = "";
+		this.qtdBitsTAG = "";
 		this.infoEnderecos = new ArrayList<>();
 	}
 
@@ -42,8 +42,8 @@ public class DadosSaidaArquivoCACHE {
 		return qtdBitsEndereco;
 	}
 
-	public void setQtdBitsEndereco(String qtdBitsEndereco) {
-		this.qtdBitsEndereco.concat(qtdBitsEndereco);
+	public void setQtdBitsEndereco(String bitsEndereco) {
+		this.qtdBitsEndereco = qtdBitsEndereco + bitsEndereco;
 	}
 
 	public String getQtdBitsBloco() {
@@ -51,7 +51,7 @@ public class DadosSaidaArquivoCACHE {
 	}
 
 	public void setQtdBitsBloco(String qtdBitsBloco) {
-		this.qtdBitsBloco.concat(qtdBitsBloco);
+		this.qtdBitsBloco = this.qtdBitsBloco + qtdBitsBloco;
 	}
 
 	public String getQtdBitsConjunto() {
@@ -59,7 +59,7 @@ public class DadosSaidaArquivoCACHE {
 	}
 
 	public void setQtdBitsConjunto(String qtdBitsConjunto) {
-		this.qtdBitsConjunto.concat(qtdBitsConjunto);
+		this.qtdBitsConjunto = this.qtdBitsConjunto + qtdBitsConjunto;
 	}
 
 	public String getQtdBitsTAG() {
@@ -67,14 +67,14 @@ public class DadosSaidaArquivoCACHE {
 	}
 
 	public void setQtdBitsTAG(String qtdBitsTAG) {
-		this.qtdBitsTAG.concat(qtdBitsTAG);
+		this.qtdBitsTAG = this.qtdBitsTAG + qtdBitsTAG;
 	}
 
 	public List<String> getInfoEnderecos() {
 		return infoEnderecos;
 	}
 
-	public void setInfoEnderecos(String infoEndereco) {
-		this.infoEnderecos.add(infoEndereco);
+	public void setInfoEnderecos(List<String> infoEnderecos) {
+		this.infoEnderecos = infoEnderecos;
 	}
 }
